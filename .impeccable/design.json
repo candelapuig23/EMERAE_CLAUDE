@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-23T00:00:00.000Z",
+  "title": "Design System: Emerae",
+  "extensions": {
+    "colorMeta": {
+      "deep-navy": {
+        "role": "neutral",
+        "displayName": "Deep Navy",
+        "canonical": "#031830",
+        "tonalRamp": ["#041d3a", "#07356a", "#0a4d9a", "#0e6cd8", "#358ef2", "#6faef6", "#a9cefa", "#e2effd"]
+      },
+      "clinical-blue": {
+        "role": "primary",
+        "displayName": "Clinical Blue",
+        "canonical": "#045CB4",
+        "tonalRamp": ["#011f3c", "#02386e", "#0452a0", "#0573e1", "#2d94fa", "#69b3fc", "#a5d1fd", "#e1f0fe"]
+      },
+      "morning-mist": {
+        "role": "secondary",
+        "displayName": "Morning Mist",
+        "canonical": "#BDDAE8",
+        "tonalRamp": ["#10242d", "#1d4253", "#2a5f79", "#3b86aa", "#60a6c8", "#8ebfd7", "#bbd9e7", "#e8f2f7"]
+      },
+      "paper": { "role": "neutral", "displayName": "Paper White", "canonical": "#ffffff" },
+      "quiet-gray": { "role": "neutral", "displayName": "Quiet Gray", "canonical": "#f7f8f9" },
+      "pale-dawn": { "role": "neutral", "displayName": "Pale Dawn", "canonical": "#f0f6fa" },
+      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#4a5a6a" },
+      "fog": { "role": "neutral", "displayName": "Fog", "canonical": "#7a8a9a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 del Hero. Único lugar con tamaño fluido en vw. Siempre en cursiva." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección (H2), a menudo en cursiva cuando cierran una idea emocional." },
+      "title": { "displayName": "Title", "purpose": "Títulos de tarjeta o componente (nombre de profesional, título de beneficio)." },
+      "body": { "displayName": "Body", "purpose": "Párrafos de cuerpo, peso 300 deliberadamente ligero." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Badge en mayúsculas que abre casi cada sección." }
+    },
+    "shadows": [
+      { "name": "ambient", "value": "0 4px 24px rgba(3,24,48,0.06)", "purpose": "Reposo de elementos ya flotantes sobre el fondo (cita flotante, testimonio, contenedor FAQ)." },
+      { "name": "lifted", "value": "0 2px 24px rgba(3,24,48,0.07), 0 0 0 1px rgba(3,24,48,0.04)", "purpose": "Estado activo o en foco (FAQ abierto, tarjeta seleccionada)." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Easing del carrusel (track de Equipo y Testimonios), duración 0.6s." },
+      { "name": "ease-fast", "value": "ease", "purpose": "Transiciones cortas de estado: hover de tarjeta, apertura de acordeón (0.2–0.35s)." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Badge / Eyebrow",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Pastilla con punto de color y texto en mayúsculas que abre casi cada sección (12 de 14). Versión clara.",
+      "html": "<span class=\"ds-badge\"><span class=\"ds-badge__dot\"></span>Nuestro Tratamiento</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(4,92,180,0.06); border: 1px solid rgba(4,92,180,0.15); border-radius: 100px; padding: 5px 14px 5px 10px; font-family: Inter, sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(4,92,180,0.75); } .ds-badge__dot { width: 5px; height: 5px; border-radius: 50%; background: #045CB4; display: inline-block; }"
+    },
+    {
+      "name": "Badge / Eyebrow (dark)",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Variante del badge sobre fondo Deep Navy (Tratamiento, Familias, CTA final).",
+      "html": "<span class=\"ds-badge-dark\"><span class=\"ds-badge-dark__dot\"></span>Para familias</span>",
+      "css": ".ds-badge-dark { display: inline-flex; align-items: center; gap: 8px; background: rgba(189,218,232,0.1); border: 1px solid rgba(189,218,232,0.2); border-radius: 100px; padding: 5px 14px 5px 10px; font-family: Inter, sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(189,218,232,0.85); } .ds-badge-dark__dot { width: 5px; height: 5px; border-radius: 50%; background: #BDDAE8; display: inline-block; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botón principal — fondo Clinical Blue sólido, pastilla completa.",
+      "html": "<button class=\"ds-btn-primary\">Pedir primera consulta gratuita</button>",
+      "css": ".ds-btn-primary { background: #045CB4; color: #ffffff; border: 1px solid #045CB4; border-radius: 100px; padding: 14px 28px; font-family: Inter, sans-serif; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.2s; } .ds-btn-primary:hover { background: #0452a0; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #045CB4; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Botón secundario — transparente con borde hairline, sobre fondo claro.",
+      "html": "<button class=\"ds-btn-ghost\">Ver cómo trabajamos →</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #031830; border: 1px solid rgba(7,33,61,0.2); border-radius: 100px; padding: 14px 28px; font-family: Inter, sans-serif; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: border-color 0.2s, color 0.2s; } .ds-btn-ghost:hover { border-color: #045CB4; color: #045CB4; } .ds-btn-ghost:focus-visible { outline: 2px solid #045CB4; outline-offset: 2px; }"
+    },
+    {
+      "name": "Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Tarjeta plana sobre fondo claro (stats, beneficios, FAQ).",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card__title\">Trabajamos el origen, no solo la conducta</div><div class=\"ds-card__desc\">Lo que marca la diferencia es entender qué función ha cumplido la adicción en tu vida.</div></div>",
+      "css": ".ds-card { background: #f7f8f9; border-radius: 14px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px; } .ds-card__title { font-family: Inter, sans-serif; font-size: 0.88rem; font-weight: 600; color: #031830; } .ds-card__desc { font-family: Inter, sans-serif; font-size: 0.82rem; color: #7a8a9a; line-height: 1.65; }"
+    },
+    {
+      "name": "Dark Card",
+      "kind": "card",
+      "refersTo": "card-dark",
+      "description": "Tarjeta sobre fondo Deep Navy (Tratamiento).",
+      "html": "<div class=\"ds-card-dark\"><div class=\"ds-card-dark__num\">01</div><div class=\"ds-card-dark__title\">Especialización exclusiva en adicciones</div></div>",
+      "css": ".ds-card-dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(189,218,232,0.12); border-radius: 24px; padding: 36px 32px; } .ds-card-dark__num { font-family: 'Instrument Serif', serif; font-size: 3rem; color: rgba(189,218,232,0.15); margin-bottom: 20px; } .ds-card-dark__title { font-family: Inter, sans-serif; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9); }"
+    },
+    {
+      "name": "Carousel Navigation",
+      "kind": "custom",
+      "refersTo": "carousel-nav",
+      "description": "Flechas + dots reutilizados en Equipo y Testimonios.",
+      "html": "<div class=\"ds-carousel-nav\"><button class=\"ds-arrow\">&#8592;</button><div class=\"ds-dots\"><div class=\"ds-dot ds-dot--active\"></div><div class=\"ds-dot\"></div><div class=\"ds-dot\"></div></div><button class=\"ds-arrow\">&#8594;</button></div>",
+      "css": ".ds-carousel-nav { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 36px; } .ds-arrow { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(3,24,48,0.15); background: white; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1rem; color: #031830; transition: all 0.2s; } .ds-arrow:hover { background: #031830; color: white; border-color: #031830; } .ds-dots { display: flex; gap: 6px; align-items: center; } .ds-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(3,24,48,0.15); cursor: pointer; transition: all 0.25s; } .ds-dot--active { background: #045CB4; width: 20px; border-radius: 4px; }"
+    },
+    {
+      "name": "FAQ Accordion Item",
+      "kind": "custom",
+      "refersTo": "accordion-item",
+      "description": "Ítem de acordeón — número, pregunta, chevron que invierte a Clinical Blue cuando está abierto.",
+      "html": "<div class=\"ds-faq-item ds-faq-item--open\"><div class=\"ds-faq-question\"><span class=\"ds-faq-num\">01</span><span class=\"ds-faq-question-text\">¿Cómo sé si lo que tengo es una adicción?</span><span class=\"ds-faq-chevron\">&#9662;</span></div></div>",
+      "css": ".ds-faq-item { background: #ffffff; border-radius: 14px; overflow: hidden; border: 1px solid rgba(3,24,48,0.06); transition: box-shadow 0.2s; } .ds-faq-item--open { box-shadow: 0 4px 20px rgba(3,24,48,0.07); } .ds-faq-question { display: flex; align-items: center; gap: 16px; padding: 20px 24px; cursor: pointer; } .ds-faq-num { font-family: Inter, sans-serif; font-size: 0.72rem; font-weight: 500; color: #BDDAE8; min-width: 24px; } .ds-faq-question-text { font-family: Inter, sans-serif; font-size: 0.9rem; font-weight: 500; color: #031830; flex: 1; } .ds-faq-item--open .ds-faq-question-text { color: #045CB4; } .ds-faq-chevron { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(3,24,48,0.1); background: #f7f8f9; display: flex; align-items: center; justify-content: center; color: #7a8a9a; font-size: 0.7rem; transition: all 0.25s; } .ds-faq-item--open .ds-faq-chevron { background: #045CB4; border-color: #045CB4; color: white; transform: rotate(180deg); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La pausa sostenida",
+    "overview": "Todo el sistema respira: generosidad de aire en cada sección (paddings verticales de 96–120px), pocas sombras, formas redondeadas sin agresividad, y una tipografía serif itálica que se permite pausas emocionales dentro de una estructura por lo demás sobria y clínica. El diseño no acelera ni interrumpe — se comporta como el propio proceso terapéutico que representa: sin prisa, sin presión, con la calma como forma de autoridad. La superficie por defecto es plana: bloques de color completo (navy oscuro frente a blanco o gris muy suave) hacen el trabajo que en otros sistemas haría la sombra. La profundidad aparece solo cuando algo necesita distinguirse activamente — una cita flotante, un acordeón abierto, una tarjeta de testimonio — nunca como decoración ambiental de fondo. Dos registros conviven deliberadamente: uno clínico-editorial en Inter para explicar y estructurar, y uno emocional en Instrument Serif itálica para las frases que necesitan sentirse escritas a mano, no diseñadas.",
+    "keyCharacteristics": [
+      "Superficies planas por defecto; la sombra se reserva para estados activos o elementos ya flotantes, nunca para decorar en reposo.",
+      "Bloques de color completo (navy / blanco / gris) como principal herramienta de jerarquía y ritmo entre secciones.",
+      "Serif itálica reservada exclusivamente para lo emocional; Inter para todo lo funcional.",
+      "Pastillas (100px) como firma de forma en todo elemento interactivo.",
+      "Escala tonal disciplinada propuesta para sustituir la proliferación actual de opacidades ad-hoc."
+    ],
+    "rules": [
+      { "name": "The Two-Surface Rule", "body": "Cada sección es o bien clara o bien oscura — nunca mezcladas dentro de la misma sección. El contraste entre secciones consecutivas marca el ritmo del scroll.", "section": "colors" },
+      { "name": "The Tonal Discipline Rule", "body": "Usar la escala tonal de 8 pasos del sidecar para cualquier variante de opacidad nueva de Clinical Blue o Morning Mist, en vez de improvisar un valor rgba nuevo.", "section": "colors" },
+      { "name": "The Italic-Means-Emotional Rule", "body": "La cursiva en Instrument Serif marca sistemáticamente el momento más humano del texto. Nunca se aplica a texto funcional o de navegación.", "section": "typography" },
+      { "name": "The No-Ambient-Shadow-At-Rest Rule", "body": "Las superficies planas no llevan sombra en reposo. La sombra aparece únicamente en elementos ya flotantes o en su estado activo.", "section": "elevation" }
+    ],
+    "dos": [
+      "Reservar la pastilla de 100px para todo elemento interactivo (botón, badge, tab, filtro).",
+      "Mantener la serif itálica exclusivamente para momentos emocionales.",
+      "Usar bloques de color completo como principal herramienta de ritmo entre secciones.",
+      "Aplicar la escala tonal de 8 pasos para cualquier variante de opacidad nueva.",
+      "Mantener el sistema de bordes hairline (1px, opacidad baja)."
+    ],
+    "donts": [
+      "No añadir sombra decorativa a una tarjeta en reposo.",
+      "No mezclar superficie clara y oscura dentro de la misma sección.",
+      "No introducir un cuarto color de marca sin decisión expresa.",
+      "No migrar section/column a container (ni al revés) como parte de una tarea de estilo.",
+      "No dar por sentado un estado hover en botones: hoy no existe definido en el código fuente."
+    ]
+  }
+}

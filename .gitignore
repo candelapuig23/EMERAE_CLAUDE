@@ -1,0 +1,20 @@
+# Dependencias
+node_modules/
+
+# Configuración local de Claude
+.claude/settings.local.json
+
+# Variables y credenciales
+.env
+.env.*
+!.env.example
+
+# Archivos temporales
+*.log
+*.tmp
+~$*.docx
+.DS_Store
+Thumbs.db
+
+# VS Code local
+.vscode/settings.json
